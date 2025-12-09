@@ -1,0 +1,267 @@
+// =========================
+//      З М І Н Н І
+// =========================
+$yellow: #f2ab01;
+$dark: #333333;
+$light-bg: #f0f0f0;
+$text-dark: #333333;
+$shadow: rgba(0,0,0,0.2);
+$range-bg: #e0e0e0;
+
+
+// =========================
+//        PLACEHOLDERS
+// =========================
+%flex {
+  display: flex;
+}
+
+%circle {
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+// =========================
+//         М І К С І Н И
+// =========================
+
+@mixin text($size, $color: $text-dark, $weight: 400) {
+  font-size: $size;
+  color: $color;
+  font-weight: $weight;
+}
+
+@mixin line-track($percent) {
+  background: linear-gradient(to right, #f0b400 $percent, $range-bg $percent);
+}
+
+
+// =========================
+//       Г О Т О В И Й  S C S S
+// =========================
+
+.bg-2 {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 180px;
+  height: 130px;
+  background: $yellow;
+  clip-path: polygon(100% 0, 100% 100%, 0 100%);
+}
+
+.line-2 {
+  width: 3px;
+  background-color: $dark;
+  height: 1617px;
+  margin-right: 20px;
+  margin-left: 70px;
+  position: relative;
+  z-index: 1;
+}
+
+.wrapper {
+  @extend %flex;
+}
+
+.content {
+  flex: 1;
+}
+
+.bg {
+  background-color: $light-bg;
+  margin-left: -92px;
+  margin-top: 130px;
+  height: 200px;
+}
+
+.dot-4 {
+  .item {
+    @extend %flex;
+    align-items: flex-start;
+    gap: 20px;
+    margin-left: 64.5px;
+    padding-top: 40px;
+    position: relative;
+    z-index: 1;
+
+    i {
+      width: 12px;
+      height: 120px;
+      border-radius: 15px;
+      background-color: $yellow;
+      flex-shrink: 0;
+    }
+
+    div {
+      @extend %flex;
+      flex-direction: column;
+    }
+  }
+}
+
+.text-5 {
+  @include text(45px, $dark, 800);
+  text-transform: uppercase;
+  line-height: 10px;
+  padding-top: 30px;
+}
+
+.text-6 {
+  color: $yellow;
+}
+
+.text-7 {
+  @include text(22px, $dark, 400);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.text-8 {
+  @include text(33px, black, 800);
+  text-transform: uppercase;
+  margin-left: -5px;
+}
+
+.icon-circle-2 {
+  width: 35px;
+  height: 35px;
+  background-color: $yellow;
+  @extend %circle;
+  box-shadow: 0 0 3px $shadow;
+
+  div {
+    @include text(22px, $dark);
+  }
+}
+
+.text-9 {
+  @include text(20px, $dark, 400);
+  line-height: 1.6;
+  text-align: justify;
+  max-width: 500px;
+  margin-left: 5px;
+  display: none;
+}
+
+.text-10 {
+  @include text(22px, $dark, 800);
+  line-height: 15px;
+}
+
+.text-11 {
+  @include text(18px, $dark, 500);
+  margin-left: 130px;
+}
+
+.text-12 {
+  @include text(18px, $dark, 450);
+  font-style: italic;
+}
+
+.text-13 {
+  @include text(16px, $dark, 400);
+  line-height: 1.6;
+  text-align: justify;
+}
+
+.text-14 {
+  @include text(18px, $dark, 500);
+  margin-left: 188px;
+}
+
+.text-15 {
+  @include text(18px, $dark, 500);
+  margin-left: 150px;
+}
+
+.wid {
+  max-width: 500px;
+}
+
+.skill {
+  @extend %flex;
+  gap: 20px;
+  align-items: center;
+  margin-top: 13px;
+
+  span {
+    @include text(13px, $dark, 700);
+    white-space: nowrap;
+    width: 100px;
+    display: inline-block;
+  }
+}
+
+.skill-2 {
+  @extend %flex;
+  gap: 20px;
+  align-items: center;
+  margin-top: 13px;
+
+  span {
+    @include text(13px, $dark, 700);
+    white-space: nowrap;
+    width: 120px;
+    display: inline-block;
+  }
+}
+
+.range-input {
+  -webkit-appearance: none;
+  width: 110px;
+  height: 8px;
+  background: $range-bg;
+  border-radius: 10px;
+  overflow: hidden;
+
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 0;
+    height: 12px;
+    background: transparent;
+    box-shadow: -200px 0 0 200px #f0b400;
+  }
+
+  &.psd::-webkit-slider-runnable-track {
+    @include line-track(70%);
+  }
+  &.ai::-webkit-slider-runnable-track {
+    @include line-track(75%);
+  }
+  &.word::-webkit-slider-runnable-track {
+    @include line-track(60%);
+  }
+  &.ppt::-webkit-slider-runnable-track {
+    @include line-track(65%);
+  }
+  &.htmlcss::-webkit-slider-runnable-track {
+    @include line-track(80%);
+  }
+}
+
+.ll {
+  @extend %flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.arrow {
+  margin-left: 0;
+  width: 12px;
+  height: 12px;
+  border-right: 2px solid #333;
+  border-bottom: 2px solid #333;
+  transform: rotate(-45deg);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.arrow.active {
+  transform: rotate(45deg);
+}

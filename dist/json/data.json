@@ -1,0 +1,13 @@
+{
+  "name": {
+    "first": "BRIAN R.",
+    "last": "BAXTER"
+  },
+  "skills": [
+    { "name": "Adobe Photoshop", "value": 70, "type": "skill" },
+    { "name": "Adobe Illustrator", "value": 75, "type": "skill-2" },
+    { "name": "Microsoft Word", "value": 60, "type": "skill" },
+    { "name": "Microsoft PowerPoint", "value": 65, "type": "skill-2" },
+    { "name": "HTML-5/CSS-3", "value": 80, "type": "skill" }
+  ]
+}
